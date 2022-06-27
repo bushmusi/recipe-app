@@ -8,6 +8,21 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '0ca1f96c6b00b6',
+    :password => '3e04af7841fddd',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
+
   # Do not eager load code on boot.
   config.eager_load = false
 
