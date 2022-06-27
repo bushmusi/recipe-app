@@ -33,6 +33,13 @@ Things you may want to cover:
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/bushra-mustofa)
 
 
+👤 **Zahra Aershia**
+
+- GitHub: [@ZahraArshia](https://github.com/ZahraArshia)
+- Twitter: [@ZahraArshia](https://twitter.com/ZahraArshia)
+- LinkedIn: [@ZahraArshia](https://www.linkedin.com/in/ZahraArshia/)
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
