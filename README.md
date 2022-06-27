@@ -18,7 +18,7 @@ Things you may want to cover:
   - ``rails server``
 
 * Database creation
-  - ``create database blog_app``
+  - ``create database recipe_app``
 
 * How to run the test suite
   - Ruby linter test: ``rubocop``
