@@ -14,6 +14,10 @@ gem 'pg', '~> 1.1'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'devise'
+
+gem 'rdoc'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
