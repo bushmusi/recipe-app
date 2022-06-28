@@ -1,3 +1,42 @@
-<h1>Foods#index</h1>
-<h1>Foods list</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<section>
+  <aside>
+    <table id = "customers">
+      <thead>
+        <th>Food</th>
+        <th>Measurment Unit</th>
+        <th>Unit Price</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>food 1</td>
+          <td>food 1</td>
+          <td>food 1</td>
+          <td>Create</td>
+        </tr>
+      </tbody>
+    </table>
+  </aside>
+
+  <aside>
+      <h2>Add New Food</h2>
+
+      <form method="/foods" action="POST">
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" value="" placeholder="Enter food name...">
+        </div>
+        <div>
+          <label>Price:</label>
+          <input type="number" name="price" value="" placeholder="Enter price..." min="0">
+        </div>
+        <div>
+          <label>Unit:</label>
+          <input type="text" name="name" value="" placeholder="Enter Measurment unit..">
+        </div>
+        <div class=button_box>
+          <input type="Submit" value="Add">
+        </div>
+      </form>
+  </aside>
+</section>
