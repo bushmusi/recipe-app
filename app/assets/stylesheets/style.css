@@ -57,3 +57,67 @@ footer > ul.footer {
   gap: 10px;
   justify-content: center;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+input:not([type="submit"]) {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+}
+
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: rgb(224, 217, 210);
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) { background-color: #f2f2f2; }
+
+#customers tr:hover { background-color: #ddd; }
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: bisque;
+  color: rgb(70, 10, 10);
+}
+
+div.button_box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
