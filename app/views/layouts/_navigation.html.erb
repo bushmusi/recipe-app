@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li class="log_out">
+      <a>
+        <% if user_signed_in? %>
+            <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% end %>
+      </div>
+    </a>
+  </ul>
+</nav>
