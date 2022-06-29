@@ -7,10 +7,15 @@ class FoodsController < ApplicationController
   end
 
   def create
-    temp = Food.create(food_params)
-    puts "-------#{temp.id}"
-    puts "-------#{food_params}"
-    redirect_to foods_path
+    temp = Food.new(food_params)
+    if temp.save
+      redirect_to foods_path, notice: 'Food Created'
+    else
+      redirect_to foods_path, notice: 'Food Not Created'
+    end
+    #   puts "-------#{temp.id}"
+    # puts "-------#{food_params}"
+    
   end
 
   def destroy
