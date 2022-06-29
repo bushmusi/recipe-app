@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show, :new]
   resources :foods, only: [:index, :show, :new, :create]
   resources :inventory_foods, only: [:index, :new]
+  resources :dogs
 end
