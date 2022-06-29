@@ -24,7 +24,6 @@
       <h2>Add New Food</h2>
 
       <%= form_with model: @food do |f| %>
-        <%= @food.errors.any? %>
         <% if @food.errors.any? %>
           <ul>
             <% @food.errors.full_messages.each do |message| %>
