@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
@@ -57,6 +55,15 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+
+  # Add Should mathcers gem to help with model testing
+  gem 'shoulda-matchers', '~> 3.1'
+
+  #Add Database Cleaner to clear DB for most test cases
+  gem "database_cleaner"
+
+  #Add rspec-rails for testing
+  gem "rspec-rails"
 end
 
 group :development do
