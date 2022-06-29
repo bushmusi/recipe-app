@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipeApp</title>
+    <title>Recipe App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "style" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
@@ -18,5 +18,7 @@
       <% end %>
       </div>
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
