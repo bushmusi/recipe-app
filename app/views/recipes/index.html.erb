@@ -1,17 +1,19 @@
-<main>
-  <section>
-    <%= link_to "New Recipe", new_recipe_path, class:"btn" %>
-  </section>
-  <section>
+<div class="recipe-list">
+  <div>
+    <%= link_to "New Recipe", new_recipe_path, class:"btn margin" %>
+  </div>
+  <ul>
     <% if @recipes&.empty? %>
       <p>No recipes to show!</p>
       <%else%>
       <% @recipes&.each do |recipe| %>
-      <div class="recipe-card">
+      <li class="recipe-card">
         <h1><%= link_to recipe.name, recipe_path(recipe.id) %></h1>
+        <h3>Preparation Time:<%= recipe.preparation_time %></h3>
+        <h3>cooking time:<%= recipe.cooking_time %></h3>
         <%= link_to('Remove', delete_recipe_path(recipe), class:"btn") %>
-        <p><%= recipe.description %></p>
+      <li>
       <% end %>
     <%end%>
-</section>
-</main>
+  </ul>
+</div>
