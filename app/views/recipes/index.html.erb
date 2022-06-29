@@ -1,2 +1,17 @@
-<h1>recipe list</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<main>
+  <section>
+    <%= link_to "New Recipe", new_recipe_path, class:"btn" %>
+  </section>
+  <section>
+    <% if @recipes&.empty? %>
+      <p>No recipes to show!</p>
+      <%else%>
+      <% @recipes&.each do |recipe| %>
+      <div class="recipe-card">
+        <h1><%= link_to recipe.name, recipe_path(recipe.id) %></h1>
+        <%= link_to('Remove', delete_recipe_path(recipe), class:"btn") %>
+        <p><%= recipe.description %></p>
+      <% end %>
+    <%end%>
+</section>
+</main>

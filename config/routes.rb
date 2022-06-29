@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   # or we can have a homepage at the start: "users#index"
 
-  resources :recipes, only: [:index, :show, :new]
+  resources :recipes, only: [:index, :show, :new, :create] do 
+    member do
+      get :delete
+    end
+  end
   resources :foods, only: [:index, :show, :new]
   # resources :inventory_foods, only: [:index, :new]
 end
