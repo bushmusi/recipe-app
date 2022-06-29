@@ -1,0 +1,29 @@
+.inventory-heading {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.inventory-container-grid {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin: 15px auto;
+  width: 90%;
+  border: 2px solid rgb(224, 193, 156);
+  padding: 15px 7px;
+}
+
+.inventory-details-actions {
+  text-align: center;
+}
+
+.inventory-description {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.add-inventory-button {
+  border: 2px solid rgb(224, 193, 156) !important;
+  float: right;
+  margin: 15px 15px;
+}

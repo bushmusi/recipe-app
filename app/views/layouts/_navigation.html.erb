@@ -3,6 +3,7 @@
     <li class="navs"><a href=<%= root_path %>>Home</a></li>
     <% if user_signed_in? %>
       <li class="navs"><a href=<%= foods_path %>>Food</a></li>
+      <li class="navs"><a href=<%= inventory_index_path %>>Inventories</a></li> 
       <li class="navs log_out">
         <a>
           <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
