@@ -8,12 +8,14 @@
         <th>Action</th>
       </thead>
       <tbody>
-        <tr>
-          <td>food 1</td>
-          <td>food 1</td>
-          <td>food 1</td>
-          <td>Create</td>
+        <% @foods.each do |food|%>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td><%= button_to "Delete", food_path(food), method: "delete", data: { confirm: "Are you sure?" }%></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   </aside>
@@ -21,22 +23,32 @@
   <aside>
       <h2>Add New Food</h2>
 
-      <form method="/foods" action="POST">
+      <%= form_with model: @food do |f| %>
+        <%= @food.errors.any? %>
+        <% if @food.errors.any? %>
+          <ul>
+            <% @food.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <div>
           <label>Name:</label>
-          <input type="text" name="name" value="" placeholder="Enter food name...">
-        </div>
-        <div>
-          <label>Price:</label>
-          <input type="number" name="price" value="" placeholder="Enter price..." min="0">
+          <%= f.text_field :name, placeholder: "Enter name...", required: true %>
         </div>
         <div>
           <label>Unit:</label>
-          <input type="text" name="name" value="" placeholder="Enter Measurment unit..">
+           <%= f.text_field :measurement_unit, placeholder: "Enter measurement unit...", required: true %>
+        </div>
+        <div>
+          <label>Price:</label>
+          <%= f.number_field :price, placeholder: "Enter price...", min: 0, required: true %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
         </div>
         <div class=button_box>
-          <input type="Submit" value="Add">
+          <%= f.submit "Submit" %>
         </div>
-      </form>
+      <% end %>
+
   </aside>
 </section>
