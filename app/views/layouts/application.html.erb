@@ -10,13 +10,9 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div id="sign_out">
-      <% if user_signed_in? %>
-          <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn" %>
-      <% end %>
-      </div>
+    <%= render "layouts/navigation" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
 
     <%= render 'layouts/footer' %>
