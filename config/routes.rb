@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: "recipes#public_recipes"
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
-  root 'recipes#index'
+  # or we can have a homepage at the start: "users#index"
 
   resources :recipes, only: [:index, :show, :new]
-  resources :foods, only: [:index, :show, :new, :create]
-  resources :inventory_foods, only: [:index, :new]
+  resources :foods, only: [:index, :show, :new]
+  # resources :inventory_foods, only: [:index, :new]
 end
