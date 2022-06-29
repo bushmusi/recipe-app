@@ -4,6 +4,13 @@
   margin-bottom: 40px;
 }
 
+.recipe-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-bottom: 5%;
+}
+
 .margin {
   margin-left: 5%;
 }
@@ -15,7 +22,20 @@
   max-width: 60px;
 }
 
+.long-btn {
+  background-color: bisque;
+  padding: 0.5% 1.5%;
+  border: none;
+  border-radius: 5px;
+  max-width: 250px;
+}
+
 .btn:hover {
+  background-color: rgb(247, 203, 149);
+  border: solid 0.5px black;
+}
+
+.long-btn:hover {
   background-color: rgb(247, 203, 149);
   border: solid 0.5px black;
 }
@@ -23,6 +43,7 @@
 .recipe-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   border: solid 1px grey;
   border-radius: 5px;
   margin: 2% 5%;
