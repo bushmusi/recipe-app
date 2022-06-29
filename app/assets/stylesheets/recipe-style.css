@@ -12,6 +12,7 @@
   background-color: bisque;
   padding: 0.5% 1.5%;
   border-radius: 5px;
+  max-width: 60px;
 }
 
 .btn:hover {
@@ -20,8 +21,8 @@
 }
 
 .recipe-card {
-  /* display: grid;
-  flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   border: solid 1px grey;
   border-radius: 5px;
   margin: 2% 5%;
@@ -31,6 +32,10 @@
 a {
   text-decoration: none;
   color: black;
+}
+
+.recipe-title:hover {
+  color: rgb(247, 203, 149);
 }
 
 .recipe-form {
