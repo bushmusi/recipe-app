@@ -12,6 +12,15 @@ def create
   end
 end
 
+def destroy
+  inventory_food_to_delete = InventoryFood.find(params[:id])
+  if inventory_food_to_delete.destroy
+    redirect_to inventory_path(params[:inventory_id]), notice: 'Inventory food was successfully deleted.'
+  else
+    redirect_to inventory_path(params[:inventory_id]), notice: "Error. Inventory food wasn't deleted, please try again!."
+  end
+end
+
 private
 
 def inventory_params

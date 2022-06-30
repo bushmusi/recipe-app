@@ -12,8 +12,8 @@
     <div class="inventory-food-quantity-container-details">
       <div class="grid-inventory-border-right"> <%= food.name %> </div>
       <div class="grid-inventory-border-right"> <%= food.quantity %> </div>
-      <div> 
-      
+      <div>
+        <%= button_to "REMOVE FOOD", 	"/inventory/#{@inventory.id}/inventory_food/#{food.id}", method: :delete, class: "delete-inventory-button" %>
       </div>
     </div>
   <% end %>

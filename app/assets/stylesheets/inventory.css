@@ -40,11 +40,8 @@
 }
 
 .inventory-food-quantity-container {
-  border-top: 2px solid rgb(224, 193, 156) !important;
-  border-left: 2px solid rgb(224, 193, 156) !important;
-  border-right: 2px solid rgb(224, 193, 156) !important;
-  border-bottom: none;
-  margin: 15px auto 0px;
+  border: 2px solid rgb(224, 193, 156) !important;
+  margin: 15px auto 0;
   width: 95%;
   display: grid;
   grid-template-columns: 4fr 2fr 1fr;
