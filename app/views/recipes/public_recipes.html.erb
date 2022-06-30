@@ -1,3 +1,15 @@
-<h1>Recipes#public_recipes</h1>
-<h1>list of publicrecipes</h1>
-<p>Find me in app/views/recipes/public_recipes.html.erb</p>
+<section class="recipe-list">
+  <h1>PUBLIC RECIPES</h1>
+  <% @public_recipes&.each do |recipe| %>
+    <div class="recipe-card">
+      <div>
+        <h3 calss="recipe-title"><%= link_to recipe.name, recipe_path(recipe.id), class:"recipe-title"%></h3>
+        <div>By <%= recipe.user.name %></div>
+      </div>
+      <div>
+        <div>Total food items:</div>
+        <div>Price:$</div>
+      </div>
+    </div>
+  <% end %>
+</section>
