@@ -59,11 +59,11 @@ group :development, :test do
   # Add Should mathcers gem to help with model testing
   gem 'shoulda-matchers', '~> 3.1'
 
-  #Add Database Cleaner to clear DB for most test cases
-  gem "database_cleaner"
+  # Add Database Cleaner to clear DB for most test cases
+  gem 'database_cleaner'
 
-  #Add rspec-rails for testing
-  gem "rspec-rails"
+  # Add rspec-rails for testing
+  gem 'rspec-rails'
 end
 
 group :development do

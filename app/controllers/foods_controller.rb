@@ -15,7 +15,6 @@ class FoodsController < ApplicationController
     end
     #   puts "-------#{temp.id}"
     # puts "-------#{food_params}"
-    
   end
 
   def destroy
