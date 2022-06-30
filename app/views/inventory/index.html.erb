@@ -7,7 +7,9 @@
       <p>
         <%= link_to "Inventory #{inventory.id}", inventory_path(inventory.id), class: "inventory-details-link"  %> 
       </p>
-      <%= button_to "REMOVE", inventory_path(inventory.id), method: :delete, class: "delete-inventory-button" %>
+      <% if @current_user.id == inventory.user_id %>
+        <%= button_to "REMOVE", inventory_path(inventory.id), method: :delete, class: "delete-inventory-button" %>
+      <% end %>
     </div>
     <p class="inventory-description"> <%= inventory.description %> </p>
   </div>
