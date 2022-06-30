@@ -1,0 +1,9 @@
+<h1 class="inventory-heading">Create New Inventoey</h1>
+
+<%= form_with url: inventory_index_path, class: 'inventory-form' do |form| %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %>
+  <%= form.label :description, "Description" %>
+  <%= form.text_area :description, size: "60x10" %>
+  <%= form.submit %>
+<% end %>
