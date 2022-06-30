@@ -27,3 +27,10 @@
   float: right;
   margin: 15px 15px;
 }
+
+.inventory-form {
+  width: 80%;
+  margin: 10px auto;
+  display: grid;
+  row-gap: 10px;
+}
