@@ -13,8 +13,6 @@ class FoodsController < ApplicationController
     else
       redirect_to foods_path, notice: 'Food Not Created'
     end
-    #   puts "-------#{temp.id}"
-    # puts "-------#{food_params}"
   end
 
   def destroy
