@@ -6,6 +6,10 @@ class InventoryController < ApplicationController
 
   def new; end
 
+  def show
+    @inventory = Inventory.find(params[:id])
+  end
+
   def create
     new_inventory = Inventory.new(inventory_params)
     if new_inventory.save
@@ -27,6 +31,6 @@ class InventoryController < ApplicationController
   private
 
   def inventory_params
-    params.permit(:name, :description, :user_id).with_defaults(user_id: current_user.id)
+    params.permit(:name, :description, :user_id).with_defaults(user_id: current_user.id )
   end
 end
