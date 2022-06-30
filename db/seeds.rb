@@ -11,6 +11,6 @@ food2 = Food.create(name: "Burger", measurement_unit: "KG", price: 354, user: us
 food3 = Food.create(name: "Pizz", measurement_unit: "KG", price: 134, user: user)
 food4 = Food.create(name: "Spegetto", measurement_unit: "KG", price: 34, user: user)
 
-inventory1 = Inventory.create(name: "first inventory", user: user)
+inventory1 = Inventory.create(name: "first inventory", description: 'First Inventory Test', user: user)
 
-inventoryFood1 = InventoryFood.create(quantity: 34, inventory: inventory1, user: user)
+inventoryFood1 = InventoryFood.create(quantity: 34, inventory: inventory1)
