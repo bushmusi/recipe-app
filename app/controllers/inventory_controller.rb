@@ -31,6 +31,6 @@ class InventoryController < ApplicationController
   private
 
   def inventory_params
-    params.permit(:name, :description, :user_id).with_defaults(user_id: current_user.id )
+    params.permit(:name, :description, :user_id).with_defaults(user_id: current_user.id)
   end
 end
