@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id] || params[:recipe_id])
+    @inventory_data = Inventory.all
     return if params[:inventory_id].nil?
 
     recipe_food_list = RecipeFood.where(recipe_id: params[:id] || params[:recipe_id]).pluck(:food_id)
