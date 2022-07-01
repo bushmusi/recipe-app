@@ -10,11 +10,14 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id] || params[:recipe_id])
+    return if params[:inventory_id].nil?
+
     recipe_food_list = RecipeFood.where(recipe_id: params[:id] || params[:recipe_id]).pluck(:food_id)
-    if_foods_list = InventoryFood.where(inventory_id: params[:inventory_id]).pluck(:food_id)
-    diff = recipe_food_list - if_foods_list
-    meta_data = Food.where(id: diff).pluck(:id, :price)
-    puts "Data: #{meta_data}"
+    @if_foods_list = InventoryFood.where(inventory_id: params[:inventory_id]).pluck(:food_id)
+    @inventory = Inventory.find(params[:inventory_id])
+    diff = recipe_food_list - @if_foods_list
+    @meta_data = Food.where(id: diff).pluck(:name, :price)
+    @total_price = @meta_data.sum(&:last)
   end
 
   def new
