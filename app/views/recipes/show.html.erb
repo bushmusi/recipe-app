@@ -16,7 +16,7 @@
   <h2>Steps go Here...</h2>
   <div class="recipe-detail">
     <button type="button" class="long-btn">Generate Shopping List</button>
-    <button type="button" class="long-btn">Add Ingredients</button>
+    <%= button_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id) , method: :get, class: "long-btn" %>
   </div>
 
   <table id = "customers">
@@ -27,6 +27,22 @@
         <th>Value</th>
         <th>Actions</th>
       </tr>
+      <% if @recipe.recipe_food.any? %>
+        <% @recipe.recipe_food.each do |recipe_food| %>
+          <tr>
+            <th> <%= recipe_food.name %> </th>
+            <th> <%= recipe_food.quanity %> </th>
+            <th> <%= recipe_food.get_food_price * recipe_food.quanity  %> </th>
+            <th> 
+              <%= button_to "Delete Food", "/recipes/#{@recipe.id}/recipe_food/#{recipe_food.id}" , method: :delete, class: "long-btn" %>
+            </th>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <th> No food has been added to this recipe </th> 
+        </tr>
+      <% end %>
     </thead>
     <tbody>
     </tbody>
