@@ -22,7 +22,7 @@ recipe1 = Recipe.create(name: "Shiro Cooking", preparation_time: "34s", cooking_
                         description: "Bla bla bla", public: true, user: user)
 recipe2 = Recipe.create(name: "Pizza Cooking", preparation_time: "34s", cooking_time: "46s",
                           description: "Bla bla bla", public: true, user: user)
-recipe2 = Recipe.create(name: "Burgur Cooking", preparation_time: "34s", cooking_time: "46s",
+recipe3 = Recipe.create(name: "Burgur Cooking", preparation_time: "34s", cooking_time: "46s",
                         description: "Bla bla bla", public: true, user: user)
 
 recipe_food1 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food1)
