@@ -19,6 +19,9 @@
     <button type="button" class="long-btn">Add Ingredients</button>
   </div>
 
+  <br>
+  <h3 style="text-align: center">Ingredient List</h3>
+
   <table id = "customers">
     <thead>
       <tr>
@@ -29,24 +32,5 @@
       </tr>
     </thead>
   </table>
-
-  <h3>This list is for Shopping</h3>
-    <table id = "customers">
-    <thead>
-      <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= meta_data.each do |item| %>
-        <tr>
-          <td><%= item.name  %></td>
-          <td>34</td>
-          <td><%= item.price  %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 </section>
+<%= render "layouts/shopping_list" %>
