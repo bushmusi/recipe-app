@@ -8,5 +8,6 @@ describe Inventory, type: :model do
 
   describe 'relationships' do
     it { should belong_to :user }
+    it { should have_many :inventory_food }
   end
 end
