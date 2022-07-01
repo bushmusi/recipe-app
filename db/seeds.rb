@@ -10,7 +10,7 @@ food1 = Food.create(name: "Shiro", measurement_unit: "Liter", price: 34, user: u
 food2 = Food.create(name: "Burger", measurement_unit: "KG", price: 354, user: user)
 food3 = Food.create(name: "Pizz", measurement_unit: "KG", price: 134, user: user)
 food4 = Food.create(name: "Spegetto", measurement_unit: "KG", price: 34, user: user)
-food5 = Food.create(name: "Rise", measurement_unit: "KG", price: 34, user: user)
+food5 = Food.create(name: "Rise", measurement_unit: "KG", price: 14, user: user)
 
 inventory1 = Inventory.create(name: "first inventory", description: 'First Inventory Test', user: user)
 
