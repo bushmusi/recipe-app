@@ -127,3 +127,9 @@ div.button_box {
   justify-content: flex-end;
   margin-top: 20px;
 }
+
+div.shopping-data {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 20px;
+}
