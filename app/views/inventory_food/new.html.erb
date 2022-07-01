@@ -1,0 +1,8 @@
+<h1 class="inventory-heading">Create New Inventory Food</h1>
+
+<%= form_with url: inventory_inventory_food_index_path, class: 'inventory-form' do |form| %>
+  <%= form.label :quantity, "Quantity" %>
+  <%= form.number_field :quantity %>
+  <%= form.select(:food_id, @foods_available.map {|food| [food.name, food.id]}, class: 'select-food-input' ) %>
+  <%= form.submit %>
+<% end %>

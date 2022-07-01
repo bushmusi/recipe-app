@@ -6,6 +6,10 @@ class InventoryController < ApplicationController
 
   def new; end
 
+  def show
+    @inventory = Inventory.find(params[:id])
+  end
+
   def create
     new_inventory = Inventory.new(inventory_params)
     if new_inventory.save
