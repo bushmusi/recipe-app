@@ -15,7 +15,7 @@
   </div>
   <div class="recipe-detail">
     <button type="button" class="long-btn" data-bs-toggle="modal" data-bs-target="#shoppingModal">Generate Shopping List</button>
-    <button type="button" class="long-btn">Add Ingredients</button>
+    <%= button_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id) , method: :get, class: "long-btn" %>
   </div>
 
   <br>
@@ -29,6 +29,22 @@
         <th>Value</th>
         <th>Actions</th>
       </tr>
+      <% if @recipe.recipe_food.any? %>
+        <% @recipe.recipe_food.each do |recipe_food| %>
+          <tr>
+            <td> <%= recipe_food.name %> </td>
+            <td> <%= "#{recipe_food.quanity } #{recipe_food.current_food.measurement_unit}" %> </td>
+            <td> $<%= recipe_food.current_food.price * recipe_food.quanity  %> </td>
+            <td>
+              <%= button_to "Delete Food", "/recipes/#{@recipe.id}/recipe_food/#{recipe_food.id}" , method: :delete, class: "long-btn" %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td> No food has been added to this recipe </td>
+        </tr>
+      <% end %>
     </thead>
   </table>
 </section>
