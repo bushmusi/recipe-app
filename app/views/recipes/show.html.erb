@@ -32,17 +32,17 @@
       <% if @recipe.recipe_food.any? %>
         <% @recipe.recipe_food.each do |recipe_food| %>
           <tr>
-            <th> <%= recipe_food.name %> </th>
-            <th> <%= recipe_food.quanity %> </th>
-            <th> <%= recipe_food.get_food_price * recipe_food.quanity  %> </th>
-            <th> 
+            <td> <%= recipe_food.name %> </td>
+            <td> <%= "#{recipe_food.quanity } #{recipe_food.current_food.measurement_unit}" %> </td>
+            <td> $<%= recipe_food.current_food.price * recipe_food.quanity  %> </td>
+            <td>
               <%= button_to "Delete Food", "/recipes/#{@recipe.id}/recipe_food/#{recipe_food.id}" , method: :delete, class: "long-btn" %>
-            </th>
+            </td>
           </tr>
         <% end %>
       <% else %>
         <tr>
-          <th> No food has been added to this recipe </th> 
+          <td> No food has been added to this recipe </td>
         </tr>
       <% end %>
     </thead>
