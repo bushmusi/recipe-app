@@ -1,0 +1,15 @@
+<section class="recipe-list">
+  <h1>PUBLIC RECIPES</h1>
+  <% @public_recipes&.each do |recipe| %>
+    <div class="recipe-card">
+      <div>
+        <h3 calss="recipe-title"><%= link_to recipe.name, recipe_path(recipe.id), class:"recipe-title"%></h3>
+        <div>By <%= recipe.user.name %></div>
+      </div>
+      <div>
+        <div>Total food items: <%= recipe.foods.count %></div>
+        <div>Price: $<%= recipe.foods.sum(:price) %></div>
+      </div>
+    </div>
+  <% end %>
+</section>

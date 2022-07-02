@@ -1,0 +1,23 @@
+<h1 class="inventory-heading">Inventories</h1>
+<%= button_to "Add Inventories", new_inventory_path, method: :get, class: "add-inventory-button" %>
+<% if @inventories.any? %>
+<% @inventories.each do |inventory| %>
+  <div class="inventory-container-grid">
+    <div class="inventory-details-actions">
+      <p>
+        <%= link_to inventory.name, inventory_path(inventory.id), class: "inventory-details-link"  %>
+      </p>
+      <% if @current_user.id == inventory.user_id %>
+        <%= button_to "REMOVE", inventory_path(inventory.id), method: :delete, class: "delete-inventory-button" %>
+      <% end %>
+    </div>
+    <p class="inventory-description"> <%= inventory.description %> </p>
+  </div>
+<% end %>
+<% else %>
+<div class="inventory-container-grid">
+  <p class="inventory-description"> No Inventories for this user </p>
+</div>
+<% end %>
+
+

@@ -1,0 +1,53 @@
+<section>
+  <aside>
+    <table id = "customers">
+      <thead>
+        <th>Food</th>
+        <th>Measurment Unit</th>
+        <th>Unit Price</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <% @foods.each do |food|%>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td><%= button_to "Delete", food_path(food), method: "delete", data: { confirm: "Are you sure?" }%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </aside>
+
+  <aside>
+      <h2>Add New Food</h2>
+
+      <%= form_with model: @food do |f| %>
+        <% if @food.errors.any? %>
+          <ul>
+            <% @food.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div>
+          <label>Name:</label>
+          <%= f.text_field :name, placeholder: "Enter name...", required: true %>
+        </div>
+        <div>
+          <label>Unit:</label>
+           <%= f.text_field :measurement_unit, placeholder: "Enter measurement unit...", required: true %>
+        </div>
+        <div>
+          <label>Price:</label>
+          <%= f.number_field :price, placeholder: "Enter price...", min: 0, required: true %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        </div>
+        <div class=button_box>
+          <%= f.submit "Submit" %>
+        </div>
+      <% end %>
+
+  </aside>
+</section>

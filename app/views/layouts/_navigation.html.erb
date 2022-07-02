@@ -1,0 +1,21 @@
+<nav>
+  <ul class="navs">
+    <% if user_signed_in? %>
+      <li class="navs"><a href=<%= root_path %>>Home</a></li>
+      <li class="navs"><a href=<%= foods_path %>>Food</a></li>
+      <li class="navs"><a href=<%= inventory_index_path %>>Inventories</a></li> 
+      <li class="navs"><a href=<%= recipes_path %>>Recipes</a></li>
+      <li class="navs log_out">
+        <a>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+        </a>
+      </li>
+      <%else%>
+        <li class="navs"><a href=<%= root_path %>>Home</a></li>
+        <li class="navs log_out">
+          <%= link_to('Sign in', "/users/sign_in") %>
+        </li>
+    <% end %>
+
+  </ul>
+</nav>

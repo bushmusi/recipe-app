@@ -1,0 +1,78 @@
+<section class="recipe-list">
+  <h1><%= @recipe.name %></h1>
+  <div class="recipe-detail">
+    <div>
+      <p>Preparation Time: <%= @recipe.preparation_time %></p>
+      <p>Cooking Time: <%= @recipe.cooking_time %></p>
+    </div>
+    <div>
+      <label>Public</label>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="recipe-detail">
+    <button type="button" class="long-btn" data-bs-toggle="modal" data-bs-target="#shoppingModal">Generate Shopping List</button>
+    <%= button_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id) , method: :get, class: "long-btn" %>
+  </div>
+
+  <br>
+  <h3 style="text-align: center">Ingredient List</h3>
+
+  <table id = "customers">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+      <% if @recipe.recipe_food.any? %>
+        <% @recipe.recipe_food.each do |recipe_food| %>
+          <tr>
+            <td> <%= recipe_food.name %> </td>
+            <td> <%= "#{recipe_food.quanity } #{recipe_food.current_food.measurement_unit}" %> </td>
+            <td> $<%= recipe_food.current_food.price * recipe_food.quanity  %> </td>
+            <td>
+              <%= button_to "Delete Food", "/recipes/#{@recipe.id}/recipe_food/#{recipe_food.id}" , method: :delete, class: "long-btn" %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td> No food has been added to this recipe </td>
+        </tr>
+      <% end %>
+    </thead>
+  </table>
+</section>
+<%= render "layouts/shopping_list" %>
+
+<!-- Modal -->
+<div class="modal fade" id="shoppingModal" tabindex="-1" aria-labelledby="shoppingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shoppingModalLabel">Shopping</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 style="text-align: center">Generating Shopping List</h3>
+        <p>Choose an inventory to use</p>
+        <div class="inventory-choose">
+          <select class="form-select" aria-label="Default select example" style="width: 50%" id="invetory_list">
+            <option selected>Select Inventory</option>
+            <% @inventory_data.each do |item| %>
+              <option value=<%= item.id %>><%= item.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="generate" onclick="window.location.href = '<%= recipe_path(@recipe) %>/?inventory_id='+document.getElementById('invetory_list').value">Generate</button>
+      </div>
+    </div>
+  </div>
+</div>

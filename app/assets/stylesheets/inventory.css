@@ -1,0 +1,70 @@
+.inventory-heading {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.inventory-container-grid {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin: 15px auto;
+  width: 90%;
+  border: 2px solid rgb(224, 193, 156);
+  padding: 15px 7px;
+}
+
+.inventory-details-actions {
+  text-align: center;
+}
+
+.inventory-description {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.add-inventory-button {
+  border: 2px solid rgb(224, 193, 156) !important;
+  float: right;
+  margin: 15px 15px;
+}
+
+.inventory-form {
+  width: 80%;
+  margin: 10px auto;
+  display: grid;
+  row-gap: 10px;
+}
+
+.delete-inventory-button {
+  border: 2px solid rgb(224, 193, 156) !important;
+}
+
+.inventory-food-quantity-container {
+  border: 2px solid rgb(224, 193, 156) !important;
+  margin: 15px auto 0;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
+}
+
+.inventory-food-quantity-container div {
+  padding: 5px 10px;
+}
+
+.inventory-food-quantity-container-details {
+  border-bottom: 2px solid rgb(224, 193, 156) !important;
+  border-left: 2px solid rgb(224, 193, 156) !important;
+  border-right: 2px solid rgb(224, 193, 156) !important;
+  margin: 0 auto 0;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
+}
+
+.inventory-food-quantity-container-details div {
+  padding: 5px 10px;
+}
+
+.grid-inventory-border-right {
+  border-right: 2px solid rgb(224, 193, 156) !important;
+}

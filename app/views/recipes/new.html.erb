@@ -1,0 +1,16 @@
+<div class="form-container">
+  <%= form_with model: @recipe, url: recipes_path, class: "recipe-form" do |form| %>
+      <%= form.text_field :name, placeholder: 'Name'%>
+      <br>
+      <%= form.number_field :preparation_time, placeholder: 'Preparation Time' %>
+      <br>
+      <%= form.number_field :cooking_time, placeholder: 'Cooking Time' %>
+      <br>
+      <%= form.text_area :description, placeholder: 'Description', class: "text_area" %>
+      <br>
+      <%= form.label :public, "Public recipe" %>
+      <%= form.select :public, options_for_select([true, false]) %>
+      <br>
+      <%= form.submit "Add", class: "btn" %>
+    <% end %>
+</div>

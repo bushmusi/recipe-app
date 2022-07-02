@@ -1,0 +1,26 @@
+<h1 class="inventory-heading "> Inventory <%= @inventory.id %> </h1>
+<%= button_to "Add Inventory Food", "/inventory/#{@inventory.id}/inventory_food/new", method: :get, class: "add-inventory-button" %>
+
+<div class="inventory-food-quantity-container">
+  <div class="grid-inventory-border-right"> Food </div>
+  <div class="grid-inventory-border-right"> Quantities </div>
+  <div> Actions </div>
+</div>
+
+<% if @inventory.inventory_food.any? %>
+  <% @inventory.inventory_food.each do |food| %>
+    <div class="inventory-food-quantity-container-details">
+      <div class="grid-inventory-border-right"> <%= food.name %> </div>
+      <div class="grid-inventory-border-right"> <%= food.quantity %> </div>
+      <div>
+        <%= button_to "REMOVE FOOD", 	"/inventory/#{@inventory.id}/inventory_food/#{food.id}", method: :delete, class: "delete-inventory-button" %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="inventory-food-quantity-container-details">
+    <div class="grid-inventory-border-right"> No Food Added To Inventory </div>
+    <div class="grid-inventory-border-right">  </div>
+    <div>  </div>
+  </div>
+<% end %>
