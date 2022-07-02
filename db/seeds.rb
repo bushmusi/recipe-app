@@ -25,8 +25,8 @@ recipe2 = Recipe.create(name: "Pizza Cooking", preparation_time: "34s", cooking_
 recipe3 = Recipe.create(name: "Burgur Cooking", preparation_time: "34s", cooking_time: "46s",
                         description: "Bla bla bla", public: true, user: user)
 
-recipe_food1 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food1)
-recipe_food2 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food2)
-recipe_food3 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food3)
-recipe_food4 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food4)
-recipe_food5 = RecipeFood.create(quanity: 34, recipe: recipe1, food: food5)
+recipe_food1 = RecipeFood.create(quanity: 3, recipe: recipe1, food: food1)
+recipe_food2 = RecipeFood.create(quanity: 85, recipe: recipe1, food: food2)
+recipe_food3 = RecipeFood.create(quanity: 89, recipe: recipe1, food: food3)
+recipe_food4 = RecipeFood.create(quanity: 45, recipe: recipe1, food: food4)
+recipe_food5 = RecipeFood.create(quanity: 2, recipe: recipe1, food: food5)
