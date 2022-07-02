@@ -3,7 +3,7 @@
 <h3 style="text-align: center">Shopping List</h3>
 <hr>
 <% if params[:inventory_id].nil? %>
-    <p style="text-align: center">Shopping list not generated yet...</p>
+    <p style="text-align: center; margin-bottom: 90px">Shopping list not generated yet...</p>
 <% else %>
   <div class="shopping-data">
     <h3>Amount of food to buy: <%= @meta_data.count %></h3>
@@ -26,9 +26,9 @@
     <tbody>
       <% @meta_data.each do |item| %>
         <tr>
-          <td><%= item[0]  %></td>
-          <td>34 grams</td>
-          <td>$<%= item[1]  %></td>
+          <td><%= item[1]  %></td>
+          <td><%= RecipeFood.find_by(food_id: item[0]).quanity %> <%= item[2] %></td>
+          <td>$<%= RecipeFood.find_by(food_id: item[0]).quanity * item[3]  %></td>
         </tr>
       <% end %>
     </tbody>
