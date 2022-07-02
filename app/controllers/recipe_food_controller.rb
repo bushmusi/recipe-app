@@ -25,6 +25,6 @@ class RecipeFoodController < ApplicationController
   def recipe_food_params
     food_name = Food.find(params[:food_id]).name
     params.permit(:quanity, :recipe_id, :food_id).with_defaults(recipe_id: params[:recipe_id],
-                                                                    name: food_name)
+                                                                name: food_name)
   end
 end
