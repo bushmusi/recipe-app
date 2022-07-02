@@ -4,7 +4,7 @@ class RecipeFood < ApplicationRecord
 
   validates_presence_of :name, :quanity
 
-  def get_food_price
-    Food.find(self.food_id).price
+  def current_food
+    Food.find(food_id)
   end
 end
