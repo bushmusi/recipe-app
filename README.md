@@ -1,28 +1,41 @@
-# Blog App
+# Recipe App
 
-The Blog app is a classic example of a blog website. I have created a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-Things you may want to cover:
+# Built With
+ - Ruby on Rails
+ - Bootstrap 5
 
-* Ruby version
-`ruby 3.0.4`
+# Live Demo
+  - [Habesha-Recipe](https://habesha-recipe.herokuapp.com/)
 
-* System dependencies
-- Node
-- Ruby
-- Rails
-- Git
+# Additional Tools
+  1. Rubocop
+  2. Stylelint
+  3. Ruby Gems
 
-* Configuration
-- **Run app**
-  - ``rails server``
+# Getting Started
+To get local copy of the project and run
 
-* Database creation
-  - ``create database blog_app``
+1. ``git clone https://github.com/bushmusi/recipe-app/``
+2. ``cd recipe-app``
+3. ``gem install bundler``
+4. ``bundle install``
+5. ``rails s``
 
-* How to run the test suite
-  - Ruby linter test: ``rubocop``
-  - Style linter test: ``npx stylelint "**/*.{css,scss}"``
+## Database Setup
+Setup db
+
+1. ``su - postgres``
+2. ``psql``
+3. ``create role recipe with createdb login password 'recipe'``
+4. ``rails db:setup``
+5. ``rails db:create``
+
+# Tests
+
+1. ``bundle exec rspec``
+2. ``rubocop``
 
 ## Authors
 
@@ -39,12 +52,19 @@ Things you may want to cover:
 - Twitter: [@ZahraArshia](https://twitter.com/ZahraArshia)
 - LinkedIn: [@ZahraArshia](https://www.linkedin.com/in/ZahraArshia/)
 
+👤 **Alick Nyirenda**
+
+- GitHub: [@AlickNyirenda](https://github.com/Beardless-sheik)
+- Twitter: [@AlickNyirenda](https://twitter.com/AlickNyirenda)
+- LinkedIn: [@AlickNyirenda](https://www.linkedin.com/in/AlickNyirenda/)
+
+
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/bushmusi/my-catalogue/issues).
+Feel free to check the [issues page](https://github.com/bushmusi/recipe-app/issues).
 
 ## Show your support
 
@@ -53,7 +73,3 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse: [microverse community](https://github.com/microverseinc)
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
